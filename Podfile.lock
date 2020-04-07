@@ -1,0 +1,16 @@
+PODS:
+  - AKMaskField (2.0.3)
+
+DEPENDENCIES:
+  - AKMaskField
+
+SPEC REPOS:
+  trunk:
+    - AKMaskField
+
+SPEC CHECKSUMS:
+  AKMaskField: b6d147524813e62cd3f15475fa2200ce7a3d2620
+
+PODFILE CHECKSUM: 2b43147dac44fdad9a8da0cf1c0351560738e95a
+
+COCOAPODS: 1.8.3

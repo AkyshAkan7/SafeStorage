@@ -1,0 +1,6 @@
+framework module Pods_SafeStorage {
+  umbrella header "Pods-SafeStorage-umbrella.h"
+
+  export *
+  module * { export * }
+}
