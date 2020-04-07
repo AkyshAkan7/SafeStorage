@@ -3,23 +3,31 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		786425874126AF699E847A7B /* Pods_SafeStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A39E5BB1AAC5089E383441 /* Pods_SafeStorage.framework */; };
+		CED2A3DA243C59E300D0D06D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */; };
+		CED2A3DC243C7DE800D0D06D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */; };
 		CEE05449243B05A500B9C20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE05448243B05A500B9C20D /* AppDelegate.swift */; };
 		CEE0544B243B05A500B9C20D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0544A243B05A500B9C20D /* SceneDelegate.swift */; };
-		CEE0544D243B05A500B9C20D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0544C243B05A500B9C20D /* ViewController.swift */; };
+		CEE0544D243B05A500B9C20D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0544C243B05A500B9C20D /* TabBarController.swift */; };
 		CEE05450243B05A500B9C20D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE0544E243B05A500B9C20D /* Main.storyboard */; };
 		CEE05452243B05A700B9C20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE05451243B05A700B9C20D /* Assets.xcassets */; };
 		CEE05455243B05A700B9C20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE05453243B05A700B9C20D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2FA698052424E58206001E91 /* Pods-SafeStorage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeStorage.debug.xcconfig"; path = "Target Support Files/Pods-SafeStorage/Pods-SafeStorage.debug.xcconfig"; sourceTree = "<group>"; };
+		95A39E5BB1AAC5089E383441 /* Pods_SafeStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFCC3B51602CFEC90BEC732C /* Pods-SafeStorage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeStorage.release.xcconfig"; path = "Target Support Files/Pods-SafeStorage/Pods-SafeStorage.release.xcconfig"; sourceTree = "<group>"; };
+		CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEE05445243B05A500B9C20D /* SafeStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE05448243B05A500B9C20D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEE0544A243B05A500B9C20D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEE0544C243B05A500B9C20D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEE0544C243B05A500B9C20D /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		CEE0544F243B05A500B9C20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CEE05451243B05A700B9C20D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE05454243B05A700B9C20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,17 +39,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				786425874126AF699E847A7B /* Pods_SafeStorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B1CB78DF02F3AF2363BCFAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2FA698052424E58206001E91 /* Pods-SafeStorage.debug.xcconfig */,
+				AFCC3B51602CFEC90BEC732C /* Pods-SafeStorage.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AE32D43BF89AFB44CEEC7AF0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				95A39E5BB1AAC5089E383441 /* Pods_SafeStorage.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CEE0543C243B05A500B9C20D = {
 			isa = PBXGroup;
 			children = (
 				CEE05447243B05A500B9C20D /* SafeStorage */,
 				CEE05446243B05A500B9C20D /* Products */,
+				2B1CB78DF02F3AF2363BCFAE /* Pods */,
+				AE32D43BF89AFB44CEEC7AF0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +86,9 @@
 			children = (
 				CEE05448243B05A500B9C20D /* AppDelegate.swift */,
 				CEE0544A243B05A500B9C20D /* SceneDelegate.swift */,
-				CEE0544C243B05A500B9C20D /* ViewController.swift */,
+				CEE0544C243B05A500B9C20D /* TabBarController.swift */,
+				CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */,
+				CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */,
 				CEE0544E243B05A500B9C20D /* Main.storyboard */,
 				CEE05451243B05A700B9C20D /* Assets.xcassets */,
 				CEE05453243B05A700B9C20D /* LaunchScreen.storyboard */,
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEE05459243B05A700B9C20D /* Build configuration list for PBXNativeTarget "SafeStorage" */;
 			buildPhases = (
+				8B8710EDE6F230FD8EBFE5AD /* [CP] Check Pods Manifest.lock */,
 				CEE05441243B05A500B9C20D /* Sources */,
 				CEE05442243B05A500B9C20D /* Frameworks */,
 				CEE05443243B05A500B9C20D /* Resources */,
+				63B66001B3F481646C474742 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +165,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		63B66001B3F481646C474742 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeStorage/Pods-SafeStorage-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SafeStorage/Pods-SafeStorage-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SafeStorage/Pods-SafeStorage-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8B8710EDE6F230FD8EBFE5AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SafeStorage-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CEE05441243B05A500B9C20D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE0544D243B05A500B9C20D /* ViewController.swift in Sources */,
+				CEE0544D243B05A500B9C20D /* TabBarController.swift in Sources */,
 				CEE05449243B05A500B9C20D /* AppDelegate.swift in Sources */,
 				CEE0544B243B05A500B9C20D /* SceneDelegate.swift in Sources */,
+				CED2A3DC243C7DE800D0D06D /* LoginViewController.swift in Sources */,
+				CED2A3DA243C59E300D0D06D /* ProfilePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +358,7 @@
 		};
 		CEE0545A243B05A700B9C20D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FA698052424E58206001E91 /* Pods-SafeStorage.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +377,7 @@
 		};
 		CEE0545B243B05A700B9C20D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFCC3B51602CFEC90BEC732C /* Pods-SafeStorage.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
