@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '10.0'
 
 target 'SafeStorage' do
   # Comment the next line if you don't want to use dynamic frameworks
@@ -7,5 +7,10 @@ target 'SafeStorage' do
 
   # Pods for SafeStorage
   pod 'AKMaskField'
+  pod 'SnapKit'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Auth'
+  
+  pod 'Reveal-SDK', configurations: ['Debug']
 
 end

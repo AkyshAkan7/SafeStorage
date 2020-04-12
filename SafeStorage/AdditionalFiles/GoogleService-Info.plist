@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>229958409026-c467efp8sic2o184bd3f2pit377jov39.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.229958409026-c467efp8sic2o184bd3f2pit377jov39</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDnsqtGbP3eJmkheBUmF9sGMPE7mWaWj3s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>229958409026</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>kz.iitu.SafeStorage</string>
+	<key>PROJECT_ID</key>
+	<string>safestorage-4dd03</string>
+	<key>STORAGE_BUCKET</key>
+	<string>safestorage-4dd03.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:229958409026:ios:ace5c2a702ba3d0dcc86db</string>
+	<key>DATABASE_URL</key>
+	<string>https://safestorage-4dd03.firebaseio.com</string>
+</dict>
+</plist>
