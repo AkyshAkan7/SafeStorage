@@ -14,6 +14,7 @@ import Firebase
 class LoginViewController: UIViewController {
     
     enum Constants {
+        static let viewTitle = "Вход"
         static let phoneNumberTitle = "Номер Телефона"
         static let continueButtonTitle = "Продолжить"
     }
@@ -24,6 +25,7 @@ class LoginViewController: UIViewController {
         textField.maskDelegate = self
         textField.maskExpression = "+7  ({ddd}) {ddd} {dd} {dd}"
         textField.maskTemplate = "-"
+        textField.keyboardType = .numberPad
         return textField
     }()
     
@@ -43,7 +45,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        navigationItem.title = "Вход"
+        navigationItem.title = Constants.viewTitle
         
         numberTextField.becomeFirstResponder()
         makeUI()
@@ -69,9 +71,14 @@ class LoginViewController: UIViewController {
             UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
             let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
             
-            let vc = VerificationCodeViewController()
+            let vc = VerificationCodeViewController(verificationID: verificationID ?? "",
+                                                    phoneNumber: phoneNumber)
             self.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+    
+    @objc func barButtonTapped() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
@@ -90,6 +97,9 @@ extension LoginViewController: AKMaskFieldDelegate {
 // Make UI
 extension LoginViewController {
     func makeUI() {
+        let barButton = UIBarButtonItem(title: "Пропустить", style: .plain, target: nil, action: #selector(barButtonTapped))
+        navigationItem.rightBarButtonItem = barButton
+        
         view.addSubview(numberTextField)
         view.addSubview(continueButton)
         

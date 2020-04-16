@@ -18,7 +18,7 @@ class TabBarController: UITabBarController {
     }
     
     func setupTabBar() {
-        let firstViewController = ProfilePageViewController()
+        let firstViewController = UINavigationController(rootViewController: ProfilePageViewController())
         firstViewController.title = "Профиль"
         
         viewControllers = [firstViewController]

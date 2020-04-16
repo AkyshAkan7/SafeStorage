@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		786425874126AF699E847A7B /* Pods_SafeStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95A39E5BB1AAC5089E383441 /* Pods_SafeStorage.framework */; };
+		6106B8821D74AD76D7DA5231 /* Pods_SafeStorage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 696F44EE35F3B8F162B695E4 /* Pods_SafeStorage.framework */; };
 		CE07DA31243CE19E0021C981 /* FloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07DA30243CE19E0021C981 /* FloatLabelTextField.swift */; };
 		CE07DA33243CE96C0021C981 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE07DA32243CE96C0021C981 /* Color.xcassets */; };
-		CE1436B6243CECC1007A91A6 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1436B2243CEAFF007A91A6 /* SnapKit.framework */; };
-		CEBBF0B924425D2500C21775 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBBF0B824425D2500C21775 /* GoogleService-Info.plist */; };
 		CEBBF0D224431C7900C21775 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF0D124431C7900C21775 /* StringExtension.swift */; };
 		CEBBF0D42443437E00C21775 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF0D32443437E00C21775 /* VerificationCodeViewController.swift */; };
+		CEBBF0DE2443459400C21775 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBBF0DD2443459400C21775 /* GoogleService-Info.plist */; };
+		CEBBF0E024434D6A00C21775 /* VerificationCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF0DF24434D6A00C21775 /* VerificationCodeTextField.swift */; };
+		CEBF1D5024485F0B008C0DA8 /* man 1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1D4F24485F0B008C0DA8 /* man 1.pdf */; };
 		CED2A3DA243C59E300D0D06D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */; };
 		CED2A3DC243C7DE800D0D06D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */; };
 		CEE05449243B05A500B9C20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE05448243B05A500B9C20D /* AppDelegate.swift */; };
@@ -38,20 +39,19 @@
 
 /* Begin PBXFileReference section */
 		2FA698052424E58206001E91 /* Pods-SafeStorage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeStorage.debug.xcconfig"; path = "Target Support Files/Pods-SafeStorage/Pods-SafeStorage.debug.xcconfig"; sourceTree = "<group>"; };
-		95A39E5BB1AAC5089E383441 /* Pods_SafeStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		696F44EE35F3B8F162B695E4 /* Pods_SafeStorage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SafeStorage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFCC3B51602CFEC90BEC732C /* Pods-SafeStorage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SafeStorage.release.xcconfig"; path = "Target Support Files/Pods-SafeStorage/Pods-SafeStorage.release.xcconfig"; sourceTree = "<group>"; };
 		CE07DA30243CE19E0021C981 /* FloatLabelTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatLabelTextField.swift; sourceTree = "<group>"; };
 		CE07DA32243CE96C0021C981 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		CE1436B2243CEAFF007A91A6 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEBBF0B824425D2500C21775 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE3DD5BC2444C4F9002884BE /* AKMaskField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AKMaskField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBBF0BF244304D700C21775 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		CEBBF0C1244304D700C21775 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
-		CEBBF0C4244304D700C21775 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
-		CEBBF0C7244304D700C21775 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		CEBBF0C9244304D700C21775 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBBF0D124431C7900C21775 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CEBBF0D32443437E00C21775 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
-		CEBBF0D92443444D00C21775 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEBBF0DD2443459400C21775 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CEBBF0DF24434D6A00C21775 /* VerificationCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeTextField.swift; sourceTree = "<group>"; };
+		CEBF1D4F24485F0B008C0DA8 /* man 1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "man 1.pdf"; sourceTree = "<group>"; };
 		CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEE05445243B05A500B9C20D /* SafeStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,8 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				786425874126AF699E847A7B /* Pods_SafeStorage.framework in Frameworks */,
-				CE1436B6243CECC1007A91A6 /* SnapKit.framework in Frameworks */,
+				6106B8821D74AD76D7DA5231 /* Pods_SafeStorage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,28 +87,20 @@
 		AE32D43BF89AFB44CEEC7AF0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE3DD5BC2444C4F9002884BE /* AKMaskField.framework */,
 				CE1436B2243CEAFF007A91A6 /* SnapKit.framework */,
-				95A39E5BB1AAC5089E383441 /* Pods_SafeStorage.framework */,
 				CEBBF0BF244304D700C21775 /* UserNotifications.framework */,
 				CEBBF0C1244304D700C21775 /* UserNotificationsUI.framework */,
+				696F44EE35F3B8F162B695E4 /* Pods_SafeStorage.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CEBBF0C3244304D700C21775 /* 123 */ = {
-			isa = PBXGroup;
-			children = (
-				CEBBF0C4244304D700C21775 /* NotificationViewController.swift */,
-				CEBBF0C6244304D700C21775 /* MainInterface.storyboard */,
-				CEBBF0C9244304D700C21775 /* Info.plist */,
-			);
-			path = 123;
 			sourceTree = "<group>";
 		};
 		CEBBF0D52443440000C21775 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				CE07DA30243CE19E0021C981 /* FloatLabelTextField.swift */,
+				CEBBF0DF24434D6A00C21775 /* VerificationCodeTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -128,8 +119,8 @@
 				CEE05451243B05A700B9C20D /* Assets.xcassets */,
 				CE07DA32243CE96C0021C981 /* Color.xcassets */,
 				CEE05453243B05A700B9C20D /* LaunchScreen.storyboard */,
-				CEBBF0D92443444D00C21775 /* GoogleService-Info.plist */,
 				CEE05456243B05A700B9C20D /* Info.plist */,
+				CEBBF0DD2443459400C21775 /* GoogleService-Info.plist */,
 			);
 			path = AdditionalFiles;
 			sourceTree = "<group>";
@@ -148,8 +139,8 @@
 		CEE0543C243B05A500B9C20D = {
 			isa = PBXGroup;
 			children = (
+				CEBF1D4F24485F0B008C0DA8 /* man 1.pdf */,
 				CEE05447243B05A500B9C20D /* SafeStorage */,
-				CEBBF0C3244304D700C21775 /* 123 */,
 				CEE05446243B05A500B9C20D /* Products */,
 				2B1CB78DF02F3AF2363BCFAE /* Pods */,
 				AE32D43BF89AFB44CEEC7AF0 /* Frameworks */,
@@ -173,7 +164,6 @@
 				CEBBF0D52443440000C21775 /* Views */,
 				CEBBF0D62443440F00C21775 /* Extensions */,
 				CEBBF0D82443444C00C21775 /* AdditionalFiles */,
-				CEBBF0B824425D2500C21775 /* GoogleService-Info.plist */,
 			);
 			path = SafeStorage;
 			sourceTree = "<group>";
@@ -240,8 +230,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE05455243B05A700B9C20D /* LaunchScreen.storyboard in Resources */,
+				CEBBF0DE2443459400C21775 /* GoogleService-Info.plist in Resources */,
 				CE07DA33243CE96C0021C981 /* Color.xcassets in Resources */,
-				CEBBF0B924425D2500C21775 /* GoogleService-Info.plist in Resources */,
+				CEBF1D5024485F0B008C0DA8 /* man 1.pdf in Resources */,
 				CEE05452243B05A700B9C20D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +289,7 @@
 				CEE0544D243B05A500B9C20D /* TabBarController.swift in Sources */,
 				CEBBF0D224431C7900C21775 /* StringExtension.swift in Sources */,
 				CEE05449243B05A500B9C20D /* AppDelegate.swift in Sources */,
+				CEBBF0E024434D6A00C21775 /* VerificationCodeTextField.swift in Sources */,
 				CE07DA31243CE19E0021C981 /* FloatLabelTextField.swift in Sources */,
 				CEBBF0D42443437E00C21775 /* VerificationCodeViewController.swift in Sources */,
 				CEE0544B243B05A500B9C20D /* SceneDelegate.swift in Sources */,
@@ -309,14 +301,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CEBBF0C6244304D700C21775 /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CEBBF0C7244304D700C21775 /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		CEE05453243B05A700B9C20D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -446,7 +430,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2FA698052424E58206001E91 /* Pods-SafeStorage.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6HNL37WZ78;
@@ -466,7 +449,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AFCC3B51602CFEC90BEC732C /* Pods-SafeStorage.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6HNL37WZ78;
