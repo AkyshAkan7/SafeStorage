@@ -14,7 +14,9 @@
 		CEBBF0D42443437E00C21775 /* VerificationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF0D32443437E00C21775 /* VerificationCodeViewController.swift */; };
 		CEBBF0DE2443459400C21775 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEBBF0DD2443459400C21775 /* GoogleService-Info.plist */; };
 		CEBBF0E024434D6A00C21775 /* VerificationCodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBBF0DF24434D6A00C21775 /* VerificationCodeTextField.swift */; };
-		CEBF1D5024485F0B008C0DA8 /* man 1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CEBF1D4F24485F0B008C0DA8 /* man 1.pdf */; };
+		CEBF1D542448EFB3008C0DA8 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1D532448EFB3008C0DA8 /* ProfileTableViewCell.swift */; };
+		CEBF1D57244992DE008C0DA8 /* ProfileMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1D56244992DE008C0DA8 /* ProfileMenu.swift */; };
+		CEBF1D59244994E6008C0DA8 /* ProfileMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1D58244994E6008C0DA8 /* ProfileMenuManager.swift */; };
 		CED2A3DA243C59E300D0D06D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */; };
 		CED2A3DC243C7DE800D0D06D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */; };
 		CEE05449243B05A500B9C20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE05448243B05A500B9C20D /* AppDelegate.swift */; };
@@ -51,7 +53,9 @@
 		CEBBF0D32443437E00C21775 /* VerificationCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeViewController.swift; sourceTree = "<group>"; };
 		CEBBF0DD2443459400C21775 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEBBF0DF24434D6A00C21775 /* VerificationCodeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeTextField.swift; sourceTree = "<group>"; };
-		CEBF1D4F24485F0B008C0DA8 /* man 1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "man 1.pdf"; sourceTree = "<group>"; };
+		CEBF1D532448EFB3008C0DA8 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		CEBF1D56244992DE008C0DA8 /* ProfileMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenu.swift; sourceTree = "<group>"; };
+		CEBF1D58244994E6008C0DA8 /* ProfileMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuManager.swift; sourceTree = "<group>"; };
 		CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEE05445243B05A500B9C20D /* SafeStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,13 +100,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CEBBF0D52443440000C21775 /* Views */ = {
+		CEBBF0D52443440000C21775 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				CE07DA30243CE19E0021C981 /* FloatLabelTextField.swift */,
 				CEBBF0DF24434D6A00C21775 /* VerificationCodeTextField.swift */,
+				CEBF1D5A2449986F008C0DA8 /* Cell */,
 			);
-			path = Views;
+			path = View;
 			sourceTree = "<group>";
 		};
 		CEBBF0D62443440F00C21775 /* Extensions */ = {
@@ -125,7 +130,7 @@
 			path = AdditionalFiles;
 			sourceTree = "<group>";
 		};
-		CEBBF0DA2443448500C21775 /* ViewControlles */ = {
+		CEBBF0DA2443448500C21775 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				CEE0544C243B05A500B9C20D /* TabBarController.swift */,
@@ -133,13 +138,29 @@
 				CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */,
 				CEBBF0D32443437E00C21775 /* VerificationCodeViewController.swift */,
 			);
-			path = ViewControlles;
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		CEBF1D5524499286008C0DA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF1D56244992DE008C0DA8 /* ProfileMenu.swift */,
+				CEBF1D58244994E6008C0DA8 /* ProfileMenuManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEBF1D5A2449986F008C0DA8 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CEBF1D532448EFB3008C0DA8 /* ProfileTableViewCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CEE0543C243B05A500B9C20D = {
 			isa = PBXGroup;
 			children = (
-				CEBF1D4F24485F0B008C0DA8 /* man 1.pdf */,
 				CEE05447243B05A500B9C20D /* SafeStorage */,
 				CEE05446243B05A500B9C20D /* Products */,
 				2B1CB78DF02F3AF2363BCFAE /* Pods */,
@@ -160,8 +181,9 @@
 			children = (
 				CEE05448243B05A500B9C20D /* AppDelegate.swift */,
 				CEE0544A243B05A500B9C20D /* SceneDelegate.swift */,
-				CEBBF0DA2443448500C21775 /* ViewControlles */,
-				CEBBF0D52443440000C21775 /* Views */,
+				CEBF1D5524499286008C0DA8 /* Model */,
+				CEBBF0DA2443448500C21775 /* ViewController */,
+				CEBBF0D52443440000C21775 /* View */,
 				CEBBF0D62443440F00C21775 /* Extensions */,
 				CEBBF0D82443444C00C21775 /* AdditionalFiles */,
 			);
@@ -232,7 +254,6 @@
 				CEE05455243B05A700B9C20D /* LaunchScreen.storyboard in Resources */,
 				CEBBF0DE2443459400C21775 /* GoogleService-Info.plist in Resources */,
 				CE07DA33243CE96C0021C981 /* Color.xcassets in Resources */,
-				CEBF1D5024485F0B008C0DA8 /* man 1.pdf in Resources */,
 				CEE05452243B05A700B9C20D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,8 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEE0544D243B05A500B9C20D /* TabBarController.swift in Sources */,
+				CEBF1D59244994E6008C0DA8 /* ProfileMenuManager.swift in Sources */,
 				CEBBF0D224431C7900C21775 /* StringExtension.swift in Sources */,
 				CEE05449243B05A500B9C20D /* AppDelegate.swift in Sources */,
+				CEBF1D57244992DE008C0DA8 /* ProfileMenu.swift in Sources */,
+				CEBF1D542448EFB3008C0DA8 /* ProfileTableViewCell.swift in Sources */,
 				CEBBF0E024434D6A00C21775 /* VerificationCodeTextField.swift in Sources */,
 				CE07DA31243CE19E0021C981 /* FloatLabelTextField.swift in Sources */,
 				CEBBF0D42443437E00C21775 /* VerificationCodeViewController.swift in Sources */,
