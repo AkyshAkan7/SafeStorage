@@ -20,7 +20,7 @@ class ProfileTableViewCell: UITableViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "DarkBlue")
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 16)
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
         label.textAlignment = .left
         return label
     }()

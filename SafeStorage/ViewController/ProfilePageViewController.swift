@@ -130,6 +130,8 @@ class ProfilePageViewController: UIViewController {
                 self.present(navigationVC, animated: true, completion: nil)
                 return
             }
+            
+            print(user.uid)
         }
     }
     
@@ -138,7 +140,6 @@ class ProfilePageViewController: UIViewController {
     }
     
     @objc func quitButtonTapped() {
-        let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
         } catch let signOutError as NSError {
@@ -152,7 +153,6 @@ class ProfilePageViewController: UIViewController {
 extension ProfilePageViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(ProfileMenuManager.shared.models.count)
         return ProfileMenuManager.shared.models.count
     }
     
@@ -202,7 +202,7 @@ extension ProfilePageViewController {
         
         containerForProfileView.snp.makeConstraints {
             $0.top.equalToSuperview().offset(10)
-            $0.left.right.equalToSuperview()ç
+            $0.left.right.equalToSuperview()
             $0.height.equalTo(135)
         }
         

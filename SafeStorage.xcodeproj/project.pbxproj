@@ -24,6 +24,9 @@
 		CEE0544D243B05A500B9C20D /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0544C243B05A500B9C20D /* TabBarController.swift */; };
 		CEE05452243B05A700B9C20D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE05451243B05A700B9C20D /* Assets.xcassets */; };
 		CEE05455243B05A700B9C20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE05453243B05A700B9C20D /* LaunchScreen.storyboard */; };
+		CEE8B9E7244B0BE0000AD585 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8B9E6244B0BE0000AD585 /* NotificationsViewController.swift */; };
+		CEE8B9E9244B0C3B000AD585 /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8B9E8244B0C3B000AD585 /* StorageViewController.swift */; };
+		CEE8B9EB244B0CAC000AD585 /* ServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE8B9EA244B0CAC000AD585 /* ServicesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -65,6 +68,9 @@
 		CEE05451243B05A700B9C20D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE05454243B05A700B9C20D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE05456243B05A700B9C20D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE8B9E6244B0BE0000AD585 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		CEE8B9E8244B0C3B000AD585 /* StorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
+		CEE8B9EA244B0CAC000AD585 /* ServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				CEE0544C243B05A500B9C20D /* TabBarController.swift */,
+				CEE8B9E8244B0C3B000AD585 /* StorageViewController.swift */,
+				CEE8B9EA244B0CAC000AD585 /* ServicesViewController.swift */,
+				CEE8B9E6244B0BE0000AD585 /* NotificationsViewController.swift */,
 				CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */,
 				CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */,
 				CEBBF0D32443437E00C21775 /* VerificationCodeViewController.swift */,
@@ -310,12 +319,15 @@
 				CEE0544D243B05A500B9C20D /* TabBarController.swift in Sources */,
 				CEBF1D59244994E6008C0DA8 /* ProfileMenuManager.swift in Sources */,
 				CEBBF0D224431C7900C21775 /* StringExtension.swift in Sources */,
+				CEE8B9EB244B0CAC000AD585 /* ServicesViewController.swift in Sources */,
+				CEE8B9E7244B0BE0000AD585 /* NotificationsViewController.swift in Sources */,
 				CEE05449243B05A500B9C20D /* AppDelegate.swift in Sources */,
 				CEBF1D57244992DE008C0DA8 /* ProfileMenu.swift in Sources */,
 				CEBF1D542448EFB3008C0DA8 /* ProfileTableViewCell.swift in Sources */,
 				CEBBF0E024434D6A00C21775 /* VerificationCodeTextField.swift in Sources */,
 				CE07DA31243CE19E0021C981 /* FloatLabelTextField.swift in Sources */,
 				CEBBF0D42443437E00C21775 /* VerificationCodeViewController.swift in Sources */,
+				CEE8B9E9244B0C3B000AD585 /* StorageViewController.swift in Sources */,
 				CEE0544B243B05A500B9C20D /* SceneDelegate.swift in Sources */,
 				CED2A3DC243C7DE800D0D06D /* LoginViewController.swift in Sources */,
 				CED2A3DA243C59E300D0D06D /* ProfilePageViewController.swift in Sources */,
