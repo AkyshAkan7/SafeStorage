@@ -9,6 +9,7 @@
 import UIKit
 import SnapKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class VerificationCodeViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class VerificationCodeViewController: UIViewController {
         static let labelTitle = "Введите подтверждающий код которой был отправлен на номер "
     }
     
+    let db = Firestore.firestore()
     var verificationID: String
     var phoneNumber: String
     
@@ -105,7 +107,9 @@ extension VerificationCodeViewController {
             withVerificationID: verificationID,
             verificationCode: verificationCode)
         
-        Auth.auth().signIn(with: credential) { (authResult, error) in
+        Auth.auth().signIn(with: credential) { [weak self] (authResult, error) in
+            guard let self = self else { return }
+            
             if let error = error {
                 self.verificationTextField.showError()
                 print(error.localizedDescription)
@@ -114,7 +118,24 @@ extension VerificationCodeViewController {
             
             self.verificationTextField.resignFirstResponder()
             
+            guard let authResult = authResult else { return }
+            
+            let documentReference = self.db.collection("users").document("\(authResult.user.uid)")
+            documentReference.getDocument { (document, error) in
+                if let document = document, !document.exists {
+                    documentReference.setData([
+                        "firstName": nil,
+                        "middleName": nil,
+                        "surName": nil,
+                        "phone": "\(authResult.user.phoneNumber ?? "")",
+                        "avatarUrl": nil,
+                        "email": nil
+                    ])
+                }
+            }
+            
             self.dismiss(animated: true, completion: nil)
         }
     }
 }
+

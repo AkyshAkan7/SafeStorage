@@ -108,7 +108,7 @@ import AKMaskField
         } else if isError {
             border.borderColor = UIColor.systemRed.cgColor
         } else {
-            border.borderColor = titleTextColour.cgColor
+            border.borderColor = UIColor.lightGray.cgColor
         }
         // Should we show or hide the title label?
         if let txt = text , txt.isEmpty {
@@ -162,7 +162,7 @@ import AKMaskField
     // MARK:- Private Methods
     fileprivate func setup() {
         borderStyle = UITextField.BorderStyle.none
-        titleActiveTextColour = tintColor
+        titleActiveTextColour = UIColor(named: "DarkBlue")
         // Set up title label
         title.alpha = 0.0
         title.font = titleFont
@@ -217,7 +217,6 @@ import AKMaskField
     
     fileprivate func bottomBorder(){
         let width = CGFloat(2.0)
-        border.borderColor = UIColor.lightGray.cgColor
         border.frame = CGRect(x: 0, y: self.frame.size.height - width, width:  self.frame.size.width, height: self.frame.size.height)
         border.borderWidth = width
         self.layer.addSublayer(border)

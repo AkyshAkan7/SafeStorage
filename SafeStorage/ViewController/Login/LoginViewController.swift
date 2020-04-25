@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 import AKMaskField
-import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         btn.setTitle(Constants.continueButtonTitle, for: .normal)
         btn.setTitleColor(.white, for: .normal)
         btn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        btn.backgroundColor = .systemBlue
+        btn.backgroundColor = UIColor(named: "DarkBlue")
         btn.layer.cornerRadius = 10
         btn.layer.masksToBounds = true
         btn.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)

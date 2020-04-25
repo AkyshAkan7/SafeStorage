@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 import SnapKit
 
 class ProfilePageViewController: UIViewController {
@@ -16,29 +17,30 @@ class ProfilePageViewController: UIViewController {
         static let cellId = "profileCell"
     }
     
-    private var listener: AuthStateDidChangeListenerHandle!
     private let firebaseAuth = Auth.auth()
+    private let documentReference = Firestore.firestore().collection("users")
+    private var listener: AuthStateDidChangeListenerHandle!
     
     let profileImageView: UIImageView = {
         var imageView = UIImageView()
         imageView.backgroundColor  = .white
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.image = UIImage(named: "ProfileDefaultIcon")
+        imageView.image = ImageAssets.profile
         return imageView
     }()
     
     let profileNameLabel: UILabel = {
         var label = UILabel()
-        label.text = "Полное имя"
+        label.text = "Имя"
         label.textColor = UIColor(named: "DarkBlue")
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 24)
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 22)
         label.textAlignment = .left
         return label
     }()
     
     let profilePhoneLabel: UILabel = {
         var label = UILabel()
-        label.text = "+707 485 69 86"
+        label.text = "номер"
         label.textColor = UIColor(named: "DarkBlue")
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
         label.textAlignment = .left
@@ -102,23 +104,23 @@ class ProfilePageViewController: UIViewController {
     }
     
     func createContainerView(for views: [UIView]) -> UIView {
-            let container: UIView = {
-                let view = UIView()
-                view.backgroundColor = .white
-    //            view.layer.cornerRadius = 15
-                
-                view.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
-                view.layer.shadowOpacity = 0.5
-                view.layer.shadowOffset = .zero
-                view.layer.shadowRadius = 10
-                
-                return view
-            }()
-            views.forEach {
-                container.addSubview($0)
-            }
-            return container
+        let container: UIView = {
+            let view = UIView()
+            view.backgroundColor = .white
+            //            view.layer.cornerRadius = 15
+            
+            view.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+            view.layer.shadowOpacity = 0.5
+            view.layer.shadowOffset = .zero
+            view.layer.shadowRadius = 10
+            
+            return view
+        }()
+        views.forEach {
+            container.addSubview($0)
         }
+        return container
+    }
     
     func firebaseDidChangeListener() {
         listener = firebaseAuth.addStateDidChangeListener { [weak self] (_, user) in
@@ -131,12 +133,36 @@ class ProfilePageViewController: UIViewController {
                 return
             }
             
-            print(user.uid)
+            self.documentReference.document("\(user.uid)").getDocument { [weak self] (document, error) in
+                guard let self = self else { return }
+                if let error = error {
+                    print(error)
+                    return
+                }
+                
+                if let document = document, document.exists {
+                    let firstName = document["firstName"] as? String
+                    let middleName = document["middleName"] as? String
+                    let surName = document["surName"] as? String
+                    let phone = document["phone"] as? String
+                    let avatarUrl = document["avatarUrl"] as? String
+                    let email = document["email"] as? String
+                    let user = User(firstName: firstName, middleName: middleName, surName: surName, phone: phone, avatarUrl: avatarUrl, email: email)
+                    CurrentUser.shared.user = user
+                }
+                
+                if let fullName = CurrentUser.shared.getFullName() {
+                    self.profileNameLabel.text = fullName
+                } else {
+                    self.profileNameLabel.text = "Имя не указано"
+                }
+                self.profilePhoneLabel.text = CurrentUser.shared.user.phone
+            }
         }
     }
     
     @objc func editProfileButtonTapped() {
-        
+        navigationController?.pushViewController(EditProfileViewController(), animated: true)
     }
     
     @objc func quitButtonTapped() {
@@ -229,7 +255,7 @@ extension ProfilePageViewController {
         }
         
         editProfileButton.snp.makeConstraints {
-            $0.top.equalTo(profilePhoneLabel.snp.bottom).offset(10)
+            $0.top.equalTo(profilePhoneLabel.snp.bottom).offset(12)
             $0.left.equalTo(20)
         }
         

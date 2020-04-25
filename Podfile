@@ -8,8 +8,11 @@ target 'SafeStorage' do
   # Pods for SafeStorage
   pod 'AKMaskField'
   pod 'SnapKit'
+  pod 'MBProgressHUD'
+  pod 'BSImagePicker'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
   
   pod 'Reveal-SDK', configurations: ['Debug']
 

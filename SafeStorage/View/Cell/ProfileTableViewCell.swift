@@ -20,13 +20,14 @@ class ProfileTableViewCell: UITableViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(named: "DarkBlue")
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
         label.textAlignment = .left
         return label
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        selectionStyle = .none
         makeUI()
     }
     

@@ -18,30 +18,26 @@ class TabBarController: UITabBarController {
     }
     
     func setupTabBar() {
-        let firstViewController = StorageViewController()
-        firstViewController.title = "Хранилище"
-        firstViewController.tabBarItem.image = UIImage(named: "Box")
-        firstViewController.tabBarItem.selectedImage = UIImage(named: "Box")?.withRenderingMode(.alwaysOriginal)
         
-        let secondViewController = ServicesViewController()
-        secondViewController.title = "Услуги"
-        secondViewController.tabBarItem.image = UIImage(named: "Menu")
-        secondViewController.tabBarItem.selectedImage = UIImage(named: "Menu")?.withRenderingMode(.alwaysOriginal)
-        
-        let thirdViewController = NotificationsViewController()
-        thirdViewController.title = "Уведомления"
-        thirdViewController.tabBarItem.image = UIImage(named: "Notification")
-        thirdViewController.tabBarItem.selectedImage = UIImage(named: "Notification")?.withRenderingMode(.alwaysOriginal)
-        
-        let fourthViewController = UINavigationController(rootViewController: ProfilePageViewController())
-        fourthViewController.title = "Профиль"
-        fourthViewController.tabBarItem.image = UIImage(named: "Person")
-        fourthViewController.tabBarItem.selectedImage = UIImage(named: "Person")?.withRenderingMode(.alwaysOriginal)
-        
-        let appearance = UITabBarItem.appearance(whenContainedInInstancesOf: [TabBarController.self])
+        let appearance = UITabBarItem.appearance()
         appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "DarkBlue")!], for: .selected)
         
+        let firstViewController = createViewController(viewController: StorageViewController(), tabBarTitle: "Хранилище", image: ImageAssets.box!)
+        let secondViewController = createViewController(viewController: ServicesViewController(), tabBarTitle: "Услуги", image: ImageAssets.menu!)
+        let thirdViewController = createViewController(viewController: NotificationsViewController(), tabBarTitle: "Уведомления", image: ImageAssets.notification!)
+        let fourthViewController = createViewController(viewController: ProfilePageViewController(), tabBarTitle: "Профиль", image: ImageAssets.person!)
+        
+        
         viewControllers = [firstViewController, secondViewController, thirdViewController, fourthViewController]
+        selectedIndex = 3
+    }
+    
+    func createViewController(viewController: UIViewController, tabBarTitle: String, image: UIImage) -> UIViewController {
+        let viewController = UINavigationController(rootViewController: viewController)
+        viewController.title = tabBarTitle
+        viewController.tabBarItem.image = image
+        viewController.tabBarItem.selectedImage = image.withRenderingMode(.alwaysOriginal)
+        return viewController
     }
 
 
