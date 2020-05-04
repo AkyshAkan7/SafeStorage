@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-//        window?.rootViewController = TabBarController()
-        window?.rootViewController = UINavigationController(rootViewController: MakeOrderViewController())
+        window?.rootViewController = TabBarController()
+//        window?.rootViewController = UINavigationController(rootViewController: StorageViewController())
         window?.makeKeyAndVisible()
     }
 
@@ -54,5 +54,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+extension UIWindow {
+    static var key: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
+        } else {
+            return UIApplication.shared.keyWindow
+        }
+    }
 }
 

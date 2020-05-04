@@ -15,4 +15,5 @@ struct User {
     var phone: String?
     var avatarUrl: String?
     var email: String?
+    var uid: String?
 }

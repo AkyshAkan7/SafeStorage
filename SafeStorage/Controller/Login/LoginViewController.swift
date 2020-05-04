@@ -19,6 +19,22 @@ class LoginViewController: UIViewController {
         static let continueButtonTitle = "Продолжить"
     }
     
+    let logoImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = ImageAssets.logoIcon
+        return imageView
+    }()
+    
+    let logoLabel: UILabel = {
+        let label = UILabel()
+        label.text = "SafeStorage"
+        label.textAlignment = .center
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 32)
+        label.textColor  = UIColor(named: "DarkBlue")
+        return label
+    }()
+    
     lazy var numberTextField: FloatLabelTextField = {
         var textField = FloatLabelTextField()
         textField.placeholder = Constants.phoneNumberTitle
@@ -26,6 +42,7 @@ class LoginViewController: UIViewController {
         textField.maskExpression = "+7  ({ddd}) {ddd} {dd} {dd}"
         textField.maskTemplate = "-"
         textField.keyboardType = .numberPad
+        textField.inputAccessoryView = toolBar
         return textField
     }()
     
@@ -39,6 +56,19 @@ class LoginViewController: UIViewController {
         btn.layer.masksToBounds = true
         btn.addTarget(self, action: #selector(continueButtonTapped), for: .touchUpInside)
         return btn
+    }()
+    
+    let toolBar: UIToolbar = {
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        let space = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.done, target: self, action: #selector(doneDatePickerTapped))
+        
+        toolBar.setItems([space, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        toolBar.sizeToFit()
+        return toolBar
     }()
     
     override func viewDidLoad() {
@@ -77,8 +107,8 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @objc func barButtonTapped() {
-        self.dismiss(animated: true, completion: nil)
+    @objc func doneDatePickerTapped() {
+        self.view.endEditing(true)
     }
     
 }
@@ -97,18 +127,30 @@ extension LoginViewController: AKMaskFieldDelegate {
 // Make UI
 extension LoginViewController {
     func makeUI() {
-        let barButton = UIBarButtonItem(title: "Пропустить", style: .plain, target: nil, action: #selector(barButtonTapped))
-        navigationItem.rightBarButtonItem = barButton
         
+        view.addSubview(logoImageView)
+        view.addSubview(logoLabel)
         view.addSubview(numberTextField)
         view.addSubview(continueButton)
         
-        numberTextField.snp.makeConstraints {
+        logoImageView.snp.makeConstraints {
             if #available(iOS 11, *) {
                 $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(30)
             } else {
-                $0.top.top.equalTo(topLayoutGuide.snp.top).offset(50)
+                $0.top.equalTo(topLayoutGuide.snp.top).offset(40)
             }
+            
+            $0.width.height.equalTo(150)
+            $0.centerX.equalToSuperview()
+        }
+        
+        logoLabel.snp.makeConstraints {
+            $0.top.equalTo(logoImageView.snp.bottom).offset(10)
+            $0.centerX.equalToSuperview()
+        }
+        
+        numberTextField.snp.makeConstraints {
+            $0.top.equalTo(logoLabel.snp.bottom).offset(70)
             $0.left.equalTo(20)
             $0.right.equalTo(-20)
             $0.height.equalTo(50)

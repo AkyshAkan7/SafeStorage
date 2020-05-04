@@ -65,18 +65,11 @@ class VerificationCodeViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func barButtonTapped() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
 }
 
 // Make UI
 extension VerificationCodeViewController {
     func makeUI() {
-        let barButton = UIBarButtonItem(title: "Пропустить", style: .plain, target: nil, action: #selector(barButtonTapped))
-        navigationItem.rightBarButtonItem = barButton
-        
         
         view.addSubview(verificationLabel)
         view.addSubview(verificationTextField)

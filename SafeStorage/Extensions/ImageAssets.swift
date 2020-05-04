@@ -22,4 +22,6 @@ internal enum ImageAssets {
     internal static let coloredBox = UIImage(named: "ColoredBox")
     internal static let coloredEmptyBox = UIImage(named: "ColoredEmptyBox")
     internal static let truck = UIImage(named: "Truck")
+    internal static let logo = UIImage(named: "Logo")
+    internal static let logoIcon = UIImage(named: "LogoIcon")
 }

@@ -13,7 +13,9 @@ target 'SafeStorage' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   
+  # for reveal testing
   pod 'Reveal-SDK', configurations: ['Debug']
 
 end

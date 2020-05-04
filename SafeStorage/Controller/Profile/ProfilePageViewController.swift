@@ -99,7 +99,7 @@ class ProfilePageViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        profileImageView.layer.cornerRadius = 40 //self.profileImageView.frame.height * 0.5
+        profileImageView.layer.cornerRadius = self.profileImageView.frame.size.height * 0.5
         profileImageView.layer.masksToBounds  = true
     }
     
@@ -132,7 +132,6 @@ class ProfilePageViewController: UIViewController {
                 self.present(navigationVC, animated: true, completion: nil)
                 return
             }
-            
             self.documentReference.document("\(user.uid)").getDocument { [weak self] (document, error) in
                 guard let self = self else { return }
                 if let error = error {
@@ -147,7 +146,7 @@ class ProfilePageViewController: UIViewController {
                     let phone = document["phone"] as? String
                     let avatarUrl = document["avatarUrl"] as? String
                     let email = document["email"] as? String
-                    let user = User(firstName: firstName, middleName: middleName, surName: surName, phone: phone, avatarUrl: avatarUrl, email: email)
+                    let user = User(firstName: firstName, middleName: middleName, surName: surName, phone: phone, avatarUrl: avatarUrl, email: email, uid: user.uid)
                     CurrentUser.shared.user = user
                 }
                 
@@ -168,6 +167,7 @@ class ProfilePageViewController: UIViewController {
     @objc func quitButtonTapped() {
         do {
             try firebaseAuth.signOut()
+            CurrentUser.shared.user = User()
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
