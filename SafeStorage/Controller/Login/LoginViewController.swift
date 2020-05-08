@@ -128,10 +128,9 @@ extension LoginViewController: AKMaskFieldDelegate {
 extension LoginViewController {
     func makeUI() {
         
-        view.addSubview(logoImageView)
-        view.addSubview(logoLabel)
-        view.addSubview(numberTextField)
-        view.addSubview(continueButton)
+        [logoImageView, logoLabel, numberTextField, continueButton].forEach {
+            view.addSubview($0)
+        }
         
         logoImageView.snp.makeConstraints {
             if #available(iOS 11, *) {

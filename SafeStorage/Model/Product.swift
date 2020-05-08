@@ -10,6 +10,7 @@ import Foundation
 
 struct Product {
     var id: String
+    var name: String
     var address: String
     var category: String
     var comment: String?

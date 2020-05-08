@@ -1,5 +1,5 @@
 //
-//  FloatTextField.swift
+//  FloatLabelTextField.swift
 //  SafeStorage
 //
 //  Created by Akan Akysh on 4/7/20.

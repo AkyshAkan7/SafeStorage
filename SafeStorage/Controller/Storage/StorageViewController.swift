@@ -14,7 +14,7 @@ class StorageViewController: UIViewController {
     
     let status = ["Все", "В обработке", "На хранении"]
     
-    var isProductsEmpty: Bool = false {
+    var isProductsEmpty: Bool = true {
         didSet {
             [tableView, segmentedControl].forEach {
                 $0.isHidden = isProductsEmpty
@@ -96,6 +96,7 @@ class StorageViewController: UIViewController {
             
             for document in snapshot.documents {
                 let data = document.data()
+                let name = data["name"] as? String ?? ""
                 let address = data["address"] as? String ?? ""
                 let category = data["category"] as? String ?? ""
                 let comment = data["comment"] as? String ?? ""
@@ -103,7 +104,7 @@ class StorageViewController: UIViewController {
                 let retentionPeriod = data["retentionPeriod"] as? String ?? ""
                 let status = data["status"] as? String ?? ""
                 
-                let product = Product(id: document.documentID, address: address, category: category,
+                let product = Product(id: document.documentID, name: name, address: address, category: category,
                                       comment: comment, time: time, retentionPeriod: retentionPeriod, status: status)
                 products.append(product)
             }

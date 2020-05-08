@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TabBarController.swift
 //  SafeStorage
 //
 //  Created by Akan Akysh on 4/6/20.
@@ -27,9 +27,17 @@ class TabBarController: UITabBarController {
         let thirdViewController = createViewController(viewController: NotificationsViewController(), tabBarTitle: "Уведомления", image: ImageAssets.notification!)
         let fourthViewController = createViewController(viewController: ProfilePageViewController(), tabBarTitle: "Профиль", image: ImageAssets.person!)
         
-        
         viewControllers = [firstViewController, secondViewController, thirdViewController, fourthViewController]
         selectedIndex = 3
+        
+        UserDefault.loadNotificationsCount()
+        
+        let unreadMessages = NotificationManager.shared.unreadMessages
+        
+        if let tabItems = tabBar.items {
+            let tabItem = tabItems[2]
+            tabItem.badgeValue = unreadMessages == 0 ? nil : String(unreadMessages)
+        }
     }
     
     func createViewController(viewController: UIViewController, tabBarTitle: String, image: UIImage) -> UIViewController {

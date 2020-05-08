@@ -30,7 +30,7 @@ class MakeOrderViewController: UIViewController {
     // TODO: add fields
     // storage period
     
-    typealias FormData = (address: String, time: String, comment: String, category: String, retentionPeriod: String)
+    typealias FormData = (name: String, address: String, time: String, comment: String, category: String, retentionPeriod: String)
     
     private var photoAssets = [PHAsset]()
     private var photoArray = [UIImage]()
@@ -40,7 +40,7 @@ class MakeOrderViewController: UIViewController {
         }
     }
     
-    lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height - 100)
+    lazy var contentViewSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
     
     lazy var categoryListLauncher: CategoryListLauncher = {
         let launcher = CategoryListLauncher()
@@ -61,6 +61,12 @@ class MakeOrderViewController: UIViewController {
         view.backgroundColor = .white
         view.frame.size = contentViewSize
         return view
+    }()
+    
+    let orderNameTextField: FloatLabelTextField = {
+        let textField = FloatLabelTextField()
+        textField.placeholder = "Наименование товара"
+        return textField
     }()
     
     let addressTextField: FloatLabelTextField = {
@@ -207,18 +213,19 @@ class MakeOrderViewController: UIViewController {
     }
     
     func getFormData() -> FormData? {
-        guard let address = addressTextField.text else { return nil }
-        guard let time = dateTextField.text else { return nil }
-        guard let comment = commentTextField.text else { return nil }
+        guard let name = orderNameTextField.text, name != "" else { return nil}
+        guard let address = addressTextField.text, address != "" else { return nil }
+        guard let time = dateTextField.text, time != "" else { return nil }
+        let comment = commentTextField.text ?? ""
+        guard let retentionPeriod = retentionPeriodTextField.text, retentionPeriod != "" else { return nil}
         guard let category = selectedCategory?.title else { return nil }
-        guard let retentionPeriod = retentionPeriodTextField.text else { return nil}
         
-        let formData = FormData(address: address, time: time, comment: comment, category: category, retentionPeriod: retentionPeriod)
+        let formData = FormData(name: name,address: address, time: time, comment: comment, category: category, retentionPeriod: retentionPeriod)
         return formData
     }
     
     func showErrorAlert() {
-        let alert = UIAlertController(title: "Не удалось оформить заказ", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Заполните все поля", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ок", style: .cancel, handler: nil))
         self.present(alert, animated: true)
     }
@@ -229,6 +236,15 @@ class MakeOrderViewController: UIViewController {
             self.navigationController?.popToRootViewController(animated: true)
         }))
         self.present(alert, animated: true)
+    }
+    
+    func setNotificationBadge() {
+        NotificationManager.shared.addUnreadMessage()
+        
+        if let tabItems = tabBarController?.tabBar.items {
+            let tabItem = tabItems[2]
+            tabItem.badgeValue = String(NotificationManager.shared.unreadMessages)
+        }
     }
     
     @objc func datePickerHandler() {
@@ -284,6 +300,7 @@ class MakeOrderViewController: UIViewController {
             return
         }
         Firestore.firestore().collection("users").document("\(uid)").collection("products").addDocument(data: [
+            "name": formData.name,
             "address": formData.address,
             "category": formData.category,
             "comment": formData.comment,
@@ -298,6 +315,8 @@ class MakeOrderViewController: UIViewController {
                 print(error.localizedDescription)
                 self.showErrorAlert()
             } else {
+                NotificationManager.shared.addNotification(forItem: formData.name)
+                self.setNotificationBadge()
                 self.showSuccessAlert()
             }
         }
@@ -312,7 +331,7 @@ extension MakeOrderViewController {
     }
     
     func setupToolBar() {
-        [addressTextField, commentTextField, dateTextField, retentionPeriodTextField].forEach {
+        [orderNameTextField, addressTextField, commentTextField, dateTextField, retentionPeriodTextField].forEach {
             $0.inputAccessoryView = toolBar
         }
     }
@@ -320,7 +339,7 @@ extension MakeOrderViewController {
     func makeUI() {
         view.addSubview(scrollView)
         scrollView.addSubview(containerView)
-        [addressTextField, commentTextField, confirmButton, dateTextField, retentionPeriodTextField, categoryTitleLabel, categoryButton, photoTitleLabel, addPhotoButton, photoCollectionView].forEach {
+        [orderNameTextField, addressTextField, commentTextField, confirmButton, dateTextField, retentionPeriodTextField, categoryTitleLabel, categoryButton, photoTitleLabel, addPhotoButton, photoCollectionView].forEach {
             containerView.addSubview($0)
         }
         
@@ -335,8 +354,15 @@ extension MakeOrderViewController {
             $0.left.right.equalToSuperview()
         }
         
-        addressTextField.snp.makeConstraints {
+        orderNameTextField.snp.makeConstraints {
             $0.top.equalToSuperview().offset(30)
+            $0.left.equalToSuperview().offset(20)
+            $0.right.equalToSuperview().offset(-20)
+            $0.height.equalTo(55)
+        }
+        
+        addressTextField.snp.makeConstraints {
+            $0.top.equalTo(orderNameTextField.snp.bottom).offset(30)
             $0.left.equalToSuperview().offset(20)
             $0.right.equalToSuperview().offset(-20)
             $0.height.equalTo(55)

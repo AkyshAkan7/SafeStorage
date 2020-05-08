@@ -10,6 +10,31 @@ import UIKit
 
 class NotificationsViewController: UIViewController {
     
+    enum Constants {
+        static let cellId = "NotificationCell"
+    }
+    
+    var isNotificationsEmpty: Bool = true {
+        didSet {
+            [tableView].forEach {
+                $0.isHidden = isNotificationsEmpty
+            }
+            [emptyNotificationLabel, mailboxImageView].forEach {
+                $0.isHidden = !isNotificationsEmpty
+            }
+        }
+    }
+    
+    lazy var tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.systemGray6
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(NotificationsTableViewCell.self, forCellReuseIdentifier: Constants.cellId)
+        return tableView
+    }()
+    
     let emptyNotificationLabel: UILabel = {
         let label = UILabel()
         label.text = "У вас пока нет уведомлений"
@@ -35,9 +60,47 @@ class NotificationsViewController: UIViewController {
         setupNavigationBar()
         setupUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setNotificationBadge()
+        
+        UserDefault.loadNotifications()
+        if !NotificationManager.shared.notifications.isEmpty {
+            isNotificationsEmpty = false
+        } else {
+            isNotificationsEmpty = true
+        }
+    }
+    
+    func setNotificationBadge() {
+        if let tabItems = tabBarController?.tabBar.items {
+            let tabItem = tabItems[2]
+            tabItem.badgeValue = nil
+            NotificationManager.shared.markAsRead()
+        }
+    }
 
 }
 
+extension NotificationsViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return NotificationManager.shared.notifications.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellId, for: indexPath) as! NotificationsTableViewCell
+        let currentCell = NotificationManager.shared.notifications[indexPath.row]
+        cell.notification = currentCell
+        
+        return cell
+    }
+    
+    
+}
+
+// Make UI
 extension NotificationsViewController {
     func setupNavigationBar() {
         navigationItem.title = "Уведомления"
@@ -51,6 +114,7 @@ extension NotificationsViewController {
         view.addSubview(backgroundView)
         backgroundView.addSubview(emptyNotificationLabel)
         backgroundView.addSubview(mailboxImageView)
+        backgroundView.addSubview(tableView)
         
         backgroundView.snp.makeConstraints {
             if #available(iOS 11, *) {
@@ -72,6 +136,10 @@ extension NotificationsViewController {
         emptyNotificationLabel.snp.makeConstraints {
             $0.top.equalTo(mailboxImageView.snp.bottom).offset(10)
             $0.centerX.equalToSuperview()
+        }
+        
+        tableView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }

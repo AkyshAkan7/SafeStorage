@@ -12,7 +12,7 @@ class ProductTableViewCell: UITableViewCell {
     
     var product: Product? {
         didSet {
-            nameLabel.text = "Вещь  #" + (product?.id ?? "")
+            nameLabel.text = product?.name ?? ""
             categoryLabel.attributedText = attributedText(firstString: "Категория: ", secondString: (product?.category ?? ""))
             retentionPeriodLabel.attributedText = attributedText(firstString: "Срок: ", secondString: "осталось " + (product?.retentionPeriod ?? ""))
             setStatus(status: product?.status ?? "")
@@ -21,7 +21,7 @@ class ProductTableViewCell: UITableViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "HelveticaNeue-Medium", size: 17)
+        label.font = UIFont(name: "HelveticaNeue-Medium", size: 19)
         label.textColor = UIColor(named: "DarkBlue")
         return label
     }()
