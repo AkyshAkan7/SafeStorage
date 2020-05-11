@@ -41,6 +41,7 @@
 		CEBF1D542448EFB3008C0DA8 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1D532448EFB3008C0DA8 /* ProfileTableViewCell.swift */; };
 		CEBF1D57244992DE008C0DA8 /* ProfileMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1D56244992DE008C0DA8 /* ProfileMenu.swift */; };
 		CEBF1D59244994E6008C0DA8 /* ProfileMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBF1D58244994E6008C0DA8 /* ProfileMenuManager.swift */; };
+		CED1AA1624689E2000E0C32C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1AA1524689E2000E0C32C /* OnboardingViewController.swift */; };
 		CED2A3DA243C59E300D0D06D /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */; };
 		CED2A3DC243C7DE800D0D06D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */; };
 		CEE05449243B05A500B9C20D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE05448243B05A500B9C20D /* AppDelegate.swift */; };
@@ -108,6 +109,7 @@
 		CEBF1D532448EFB3008C0DA8 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewCell.swift; sourceTree = "<group>"; };
 		CEBF1D56244992DE008C0DA8 /* ProfileMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenu.swift; sourceTree = "<group>"; };
 		CEBF1D58244994E6008C0DA8 /* ProfileMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuManager.swift; sourceTree = "<group>"; };
+		CED1AA1524689E2000E0C32C /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		CED2A3D9243C59E300D0D06D /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
 		CED2A3DB243C7DE800D0D06D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		CEE05445243B05A500B9C20D /* SafeStorage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SafeStorage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE0544C243B05A500B9C20D /* TabBarController.swift */,
+				CED1AA1524689E2000E0C32C /* OnboardingViewController.swift */,
 				CE69FE6224643E4000740473 /* Storage */,
 				CE69FE5F2463F89900740473 /* Notifications */,
 				CE1693D32458BE1800F19F2D /* Services */,
@@ -457,6 +460,7 @@
 				CEBBF0E024434D6A00C21775 /* VerificationCodeTextField.swift in Sources */,
 				CE07DA31243CE19E0021C981 /* FloatLabelTextField.swift in Sources */,
 				CE86F36724505FC500CA9C2C /* MakeOrderViewController.swift in Sources */,
+				CED1AA1624689E2000E0C32C /* OnboardingViewController.swift in Sources */,
 				CE86F36B245192C600CA9C2C /* ServiceTableViewCell.swift in Sources */,
 				CEBBF0D42443437E00C21775 /* VerificationCodeViewController.swift in Sources */,
 				CEE8B9E9244B0C3B000AD585 /* StorageViewController.swift in Sources */,

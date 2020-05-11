@@ -10,6 +10,7 @@ target 'SafeStorage' do
   pod 'SnapKit'
   pod 'MBProgressHUD'
   pod 'BSImagePicker'
+  pod 'paper-onboarding'
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'

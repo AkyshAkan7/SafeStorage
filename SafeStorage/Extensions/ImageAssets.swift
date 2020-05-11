@@ -24,4 +24,8 @@ internal enum ImageAssets {
     internal static let truck = UIImage(named: "Truck")
     internal static let logo = UIImage(named: "Logo")
     internal static let logoIcon = UIImage(named: "LogoIcon")
+    internal static let onboardingTruck = UIImage(named: "white-truck")
+    internal static let onboardingBoxWithClock = UIImage(named: "white-boxWithClock")
+    internal static let onboardingBoxWithLoupe = UIImage(named: "white-boxWithLoupe")
+
 }

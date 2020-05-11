@@ -283,6 +283,7 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - paper-onboarding (6.1.4)
   - PromisesObjC (1.2.8)
   - Reveal-SDK (24)
   - SnapKit (5.0.1)
@@ -295,6 +296,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - MBProgressHUD
+  - paper-onboarding
   - Reveal-SDK
   - SnapKit
 
@@ -324,6 +326,7 @@ SPEC REPOS:
     - leveldb-library
     - MBProgressHUD
     - nanopb
+    - paper-onboarding
     - PromisesObjC
     - Reveal-SDK
     - SnapKit
@@ -353,10 +356,11 @@ SPEC CHECKSUMS:
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  paper-onboarding: d3f16416e6f42add686117e8b32bfffaad899a79
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: a5dc9189f5f6a887491eed68be4342cc38623473
+PODFILE CHECKSUM: e14ee357286e7e4a953428d82bc3ef06276c0582
 
 COCOAPODS: 1.9.1
