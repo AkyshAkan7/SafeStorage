@@ -6,7 +6,6 @@ target 'SafeStorage' do
   use_frameworks!
 
   # Pods for SafeStorage
-  pod 'AKMaskField'
   pod 'SnapKit'
   pod 'MBProgressHUD'
   pod 'BSImagePicker'
@@ -15,8 +14,6 @@ target 'SafeStorage' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'
-  
-  # for reveal testing
-  pod 'Reveal-SDK', configurations: ['Debug']
+
 
 end

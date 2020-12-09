@@ -158,7 +158,6 @@ PODS:
     - abseil/base/base_internal
     - abseil/base/config
     - abseil/meta/type_traits
-  - AKMaskField (2.0.3)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -285,11 +284,9 @@ PODS:
   - nanopb/encode (0.3.9011)
   - paper-onboarding (6.1.4)
   - PromisesObjC (1.2.8)
-  - Reveal-SDK (24)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
-  - AKMaskField
   - BSImagePicker
   - Firebase/Analytics
   - Firebase/Auth
@@ -297,13 +294,11 @@ DEPENDENCIES:
   - Firebase/Storage
   - MBProgressHUD
   - paper-onboarding
-  - Reveal-SDK
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - abseil
-    - AKMaskField
     - BoringSSL-GRPC
     - BSImagePicker
     - Firebase
@@ -328,12 +323,10 @@ SPEC REPOS:
     - nanopb
     - paper-onboarding
     - PromisesObjC
-    - Reveal-SDK
     - SnapKit
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
-  AKMaskField: b6d147524813e62cd3f15475fa2200ce7a3d2620
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   BSImagePicker: ec10342450eef9eb7d8bd040ab081bd1c3db6791
   Firebase: 32f9520684e87c7af3f0704f7f88042626d6b536
@@ -358,9 +351,8 @@ SPEC CHECKSUMS:
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   paper-onboarding: d3f16416e6f42add686117e8b32bfffaad899a79
   PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
-  Reveal-SDK: 5d7e56b8f018c0a88b3a2c10bf68d598bbd3b071
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: e14ee357286e7e4a953428d82bc3ef06276c0582
+PODFILE CHECKSUM: 96cd272ccc0045698049ab8d9ef5ddc9962c3061
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

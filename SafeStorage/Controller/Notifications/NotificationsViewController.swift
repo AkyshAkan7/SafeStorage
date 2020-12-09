@@ -69,6 +69,7 @@ class NotificationsViewController: UIViewController {
         UserDefault.loadNotifications()
         if !NotificationManager.shared.notifications.isEmpty {
             isNotificationsEmpty = false
+            tableView.reloadData()
         } else {
             isNotificationsEmpty = true
         }

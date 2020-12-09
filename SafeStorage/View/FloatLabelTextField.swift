@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AKMaskField
+
 
 @IBDesignable class FloatLabelTextField: AKMaskField {
     private let animationDuration = 0.3

@@ -20,7 +20,14 @@ class TabBarController: UITabBarController {
     func setupTabBar() {
         
         let appearance = UITabBarItem.appearance()
-        appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "DarkBlue")!], for: .selected)
+        
+        if #available(iOS 13, *) {
+            let appearance = UITabBarAppearance()
+            appearance.stackedLayoutAppearance.selected.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "DarkBlue")!]
+            tabBar.standardAppearance = appearance
+        } else {
+            appearance.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor(named: "DarkBlue")!], for: .selected)
+        }
         
         let firstViewController = createViewController(viewController: StorageViewController(), tabBarTitle: "Хранилище", image: ImageAssets.box!)
         let secondViewController = createViewController(viewController: ServicesViewController(), tabBarTitle: "Услуги", image: ImageAssets.menu!)
