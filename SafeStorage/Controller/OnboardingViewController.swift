@@ -24,7 +24,7 @@ class OnboardingViewController: UIViewController {
                            color: UIColor(red: 217/255, green: 72/255, blue: 89/255, alpha: 1),
                            titleColor: UIColor.white, descriptionColor: UIColor.white,
                            titleFont: Constants.titleFont, descriptionFont: Constants.descriptionFont),
-
+        
         OnboardingItemInfo(informationImage: ImageAssets.onboardingTruck!,
                            title: "Переезд",
                            description: "Делайте удобные переезды с помощью услуги 'переезд'",
@@ -121,7 +121,7 @@ extension OnboardingViewController: PaperOnboardingDataSource, PaperOnboardingDe
             }
         }
     }
-
+    
     func onboardingDidTransitonToIndex(_ index: Int) {
         if index == 2 {
             UIView.animate(withDuration: 0.4) {
