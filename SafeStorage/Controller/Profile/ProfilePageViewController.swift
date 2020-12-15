@@ -40,7 +40,7 @@ class ProfilePageViewController: UIViewController {
     
     let profilePhoneLabel: UILabel = {
         var label = UILabel()
-        label.text = "номер"
+        label.text = "Номер"
         label.textColor = UIColor(named: "DarkBlue")
         label.font = UIFont(name: "HelveticaNeue-Medium", size: 15)
         label.textAlignment = .left
